@@ -1,0 +1,5 @@
+- repos.each do |repo|
+  #{repo.panini_name} (#{repo.local_repository.path})
+  :indent
+    = repo.local_repository.status do |file_status|
+      #{green(file_status.index)}#{red(file_status.worktree)} #{file_status.path}

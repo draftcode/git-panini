@@ -1,0 +1,6 @@
+<% repos.each do |repo| %>
+<%= repo.panini_name %> (<%= repo.local_repository.path %>)
+<% repo.local_repository.branch_status.each do |line| %>
+  <%= line %>
+<% end %>
+<% end %>

@@ -1,0 +1,13 @@
+<% repos.each do |repo| %>
+<%= repo.panini_name %>
+
+<% if verbose %>
+<% repo.remotes.each do |name, remote| %>
+  <%= remote.name %>
+    URL:            <%= remote.url%>
+    Push URL:       <%= remote.push_url %>
+    Fetch refspecs: <%= remote.fetch_refspecs %>
+    Push refspecs:  <%= remote.push_refspecs %>
+<% end %>
+<% end %>
+<% end %>
